@@ -18,8 +18,14 @@ class Game{
         if(gameState === 0){
             form = new Form();
             form.display();
-            player = new player();
+            player = new Player();
             player.getCount();
         }
+    }
+    play(){
+        form.hide();
+        textSize(15);
+        text("Who is the best racer ?",75,200);
+        
     }
 }
