@@ -5,7 +5,7 @@ class Player{
         this.distance = 0;
     }
     update(){
-        var playerIndex = "players/player" + playerCount;
+        var playerIndex = "players/player" + this.position;
         database.ref(playerIndex).set({
             name: this.name,
             distance: this.distance
@@ -23,9 +23,9 @@ class Player{
             playerCount = data.val();
         })
     }
-    getPlayerInfo(){
+    static getPlayerInfo(){
         var reference = database.ref("players");
-        reference.on("value",function(data){
+        reference.on("value",(data) => {
             allPlayers = data.val();
         })
     }

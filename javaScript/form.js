@@ -17,13 +17,13 @@ class Form{
      
      this.button.position(50,275);
      
-    this.button.mousePressed(function(){
+    this.button.mousePressed(() => {
          this.input.hide();
          this.button.hide();
          
          player.name = this.input.value();
 
-         playerCount = playerCount + 1;
+         playerCount+=1;
          player.position = playerCount;
         player.update();
         player.updateCount(playerCount);
