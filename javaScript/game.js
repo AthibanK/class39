@@ -25,10 +25,12 @@ class Game{
     play(){
         form.hide();
         textSize(15);
+        console.log(player.position);
         text("Who is the best racer ?",75,200);
         Player.getPlayerInfo();
         //var yPosition = 200;
         if(allPlayers!== undefined){
+            image(trackImg,0,-7848 + displayHeight,displayWidth,7848);
            var carIndex = 0;
            var xPosition = displayWidth/8; //&&displayWidth/4/2;
            var yPosition;
@@ -58,6 +60,15 @@ class Game{
             player.distance+=20;
             player.update();
          }
+         if(player.distance > 6000){
+             gameState = 2;
+             game.update(2);
+         }
+         
         drawSprites();
+        
+    }
+    end(){
+        console.log("the game ends");
     }
 }
